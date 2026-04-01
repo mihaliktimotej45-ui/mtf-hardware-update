@@ -1351,6 +1351,96 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════
+     SEKCIA: SYSTEM LIBRARY (KNOWLEDGE BASE)
+═══════════════════════════════════════ -->
+<section class="py-20 px-4 max-w-6xl mx-auto reveal" id="section-library">
+
+  <div class="flex items-center gap-4 mb-2">
+    <div class="section-label">// MODUL 05</div>
+    <div class="flex-1 h-px" style="background:var(--blue-border);"></div>
+    <div class="section-label">SYSTEM_LIBRARY.DB</div>
+  </div>
+  <h2 class="font-orb text-3xl sm:text-4xl font-bold mb-2" style="color:#fff;">
+    SYSTEM <span style="color:var(--neon);">LIBRARY</span>
+  </h2>
+  <p class="font-mono text-sm mb-10" style="color:var(--text-dim);">&gt; Knowledge base načítaná. Vyber data shard pre detailný readout.</p>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <!-- SHARD_01: ENERGETICKÝ BILANČNÝ MODEL -->
+    <div class="panel neon-border p-6 corner-tl corner-br relative cursor-pointer group"
+         onclick="openArticle('calories')"
+         style="transition: box-shadow 0.3s, transform 0.3s;">
+      <div class="absolute top-3 right-3 font-mono text-xs" style="color:var(--neon);">SHARD_01</div>
+      <div class="w-12 h-12 flex items-center justify-center rounded mb-4 text-2xl"
+           style="background:rgba(57,255,20,0.1); border:1px solid var(--neon-dim);">⚙️</div>
+      <div class="section-label mb-1">// TÉMA: KALÓRIE & METABOLIZMUS</div>
+      <div class="font-mono text-xs mb-3" style="color:var(--text-dim);">bmr_tdee_calculator.exe</div>
+      <h3 class="font-orb text-lg font-bold mb-3" style="color:var(--neon);">ENERGETICKÝ BILANČNÝ MODEL</h3>
+      <p class="font-mono text-xs mb-5" style="color:var(--text-dim); line-height:1.7;">
+        &gt; Ako si vypočítať BMR a TDEE.<br>
+        &gt; Metabolizmus ako motor — bez dát je optimalizácia nemožná.
+      </p>
+      <div class="flex items-center gap-2 font-mono text-xs" style="color:var(--neon);">
+        <span>[ OTVORIŤ READOUT ]</span>
+        <span style="transition: transform 0.2s;" class="group-hover:translate-x-1">→</span>
+      </div>
+    </div>
+
+    <!-- SHARD_02: ARCHITEKTÚRA MAKROŽIVÍN -->
+    <div class="panel p-6 corner-tl corner-br relative cursor-pointer group"
+         onclick="openArticle('macros')"
+         style="border:1px solid var(--amber); box-shadow:0 0 10px rgba(255,184,0,0.15); transition: box-shadow 0.3s, transform 0.3s;">
+      <div class="absolute top-3 right-3 font-mono text-xs" style="color:var(--amber);">SHARD_02</div>
+      <div class="w-12 h-12 flex items-center justify-center rounded mb-4 text-2xl"
+           style="background:rgba(255,184,0,0.1); border:1px solid rgba(255,184,0,0.3);">🔩</div>
+      <div class="section-label mb-1" style="color:var(--amber);">// TÉMA: BIELKOVINY, SACHARIDY, TUKY</div>
+      <div class="font-mono text-xs mb-3" style="color:var(--text-dim);">macro_architecture.spec</div>
+      <h3 class="font-orb text-lg font-bold mb-3" style="color:var(--amber);">ARCHITEKTÚRA MAKROŽIVÍN</h3>
+      <p class="font-mono text-xs mb-5" style="color:var(--text-dim); line-height:1.7;">
+        &gt; Hardvérová špecifikácia jedálnička.<br>
+        &gt; Stavebný materiál · Primárne palivo · Systémové mazivo.
+      </p>
+      <div class="flex items-center gap-2 font-mono text-xs" style="color:var(--amber);">
+        <span>[ OTVORIŤ READOUT ]</span>
+        <span style="transition: transform 0.2s;" class="group-hover:translate-x-1">→</span>
+      </div>
+    </div>
+
+    <!-- SHARD_03: KERNEL OPTIMIZATION -->
+    <div class="panel p-6 corner-tl corner-br relative cursor-pointer group"
+         onclick="openArticle('kernel')"
+         style="border:1px solid var(--red); box-shadow:0 0 10px rgba(255,59,48,0.15); transition: box-shadow 0.3s, transform 0.3s;">
+      <div class="absolute top-3 right-3 font-mono text-xs" style="color:var(--red);">SHARD_03</div>
+      <div class="w-12 h-12 flex items-center justify-center rounded mb-4 text-2xl"
+           style="background:rgba(255,59,48,0.1); border:1px solid rgba(255,59,48,0.3);">🧠</div>
+      <div class="section-label mb-1" style="color:var(--red);">// TÉMA: PSYCHIKA & FOCUS</div>
+      <div class="font-mono text-xs mb-3" style="color:var(--text-dim);">kernel_debug.log</div>
+      <h3 class="font-orb text-lg font-bold mb-3" style="color:var(--red);">KERNEL OPTIMIZATION</h3>
+      <p class="font-mono text-xs mb-5" style="color:var(--text-dim); line-height:1.7;">
+        &gt; Strava · Spánok · Mentálny výkon.<br>
+        &gt; Prečo cukrový crash = vysoká latencia procesora (mozgu).
+      </p>
+      <div class="flex items-center gap-2 font-mono text-xs" style="color:var(--red);">
+        <span>[ OTVORIŤ READOUT ]</span>
+        <span style="transition: transform 0.2s;" class="group-hover:translate-x-1">→</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Status bar under cards -->
+  <div class="mt-6 panel p-4 flex items-center gap-4" style="border-color:var(--blue-border);">
+    <div class="blink font-mono text-xs" style="color:var(--neon);">■</div>
+    <div class="font-mono text-xs" style="color:var(--text-dim);">
+      &gt; KNOWLEDGE_BASE.DB — 3 záznamy načítané // Klikni na shard pre detailný readout
+    </div>
+    <div class="ml-auto font-mono text-xs" style="color:var(--text-dim);">INDEXED: 3/3</div>
+  </div>
+
+</section>
+
 <!-- FOOTER -->
 <footer class="py-8 px-4 text-center" style="border-top:1px solid var(--blue-border);">
   <div class="font-mono text-xs" style="color:var(--text-dim);">
@@ -1451,6 +1541,79 @@
     // Small delay so transition feels intentional
     setTimeout(() => requestAnimationFrame(step), 200);
   }
+
+  // ── SYSTEM LIBRARY — openArticle ──
+  const articleData = {
+    calories: {
+      label: '// SHARD_01 — ENERGETICKÝ BILANČNÝ MODEL',
+      labelColor: 'var(--neon)',
+      title: '⚙ BMR & TDEE KALKULÁTOR',
+      titleColor: 'var(--neon)',
+      body: `<span style="color:var(--neon);">&gt; [DEFINÍCIA]</span> Tvoje telo je motor. Každý motor má spotrebu.<br>
+&gt; <span style="color:var(--amber);">BMR (Bazálny metabolický výdaj)</span> = energia, ktorú spáliš len existenciou — v kľude, bez pohybu.<br><br>
+<span style="color:var(--neon);">&gt; [VÝPOČET BMR — Mifflin-St Jeor]</span><br>
+&gt; Muž: <span style="color:#c8d8f0;">(10 × kg) + (6.25 × cm) − (5 × vek) + 5</span><br>
+&gt; Žena: <span style="color:#c8d8f0;">(10 × kg) + (6.25 × cm) − (5 × vek) − 161</span><br><br>
+<span style="color:var(--neon);">&gt; [TDEE — CELKOVÁ SPOTREBA]</span><br>
+&gt; TDEE = BMR × <span style="color:var(--amber);">Activity Factor</span><br>
+&gt; Sedavý: ×1.2 &nbsp;|&nbsp; Stredná aktivita: ×1.55 &nbsp;|&nbsp; Intenzívny tréning: ×1.9<br><br>
+<span style="color:var(--red);">&gt; [CHYBA:]</span> Bez TDEE nastaviš deficit naslepo. Motor bez meradla = zaručený breakdown.<br>
+<span style="color:var(--neon);">&gt; [ZÁVER:]</span> Dáta = kontrola. Použi Dine4Fit na monitoring v reálnom čase. ✓`
+    },
+    macros: {
+      label: '// SHARD_02 — ARCHITEKTÚRA MAKROŽIVÍN',
+      labelColor: 'var(--amber)',
+      title: '🔩 HARDVÉROVÁ ŠPECIFIKÁCIA',
+      titleColor: 'var(--amber)',
+      body: `<span style="color:var(--neon);">&gt; [KOMPONENT_01]</span> <span style="color:var(--amber);">BIELKOVINY — STAVEBNÝ MATERIÁL</span><br>
+&gt; Aminokyseliny = základné bloky tkanív. Bez nich sa sval neopraví, nenarastie.<br>
+&gt; Odporúčaný príjem: <span style="color:#c8d8f0;">1.6 – 2.2 g / kg / deň</span><br>
+&gt; Zdroje: kuracie prsia, vajcia, tvaroh, strukoviny.<br><br>
+<span style="color:var(--neon);">&gt; [KOMPONENT_02]</span> <span style="color:var(--amber);">SACHARIDY — PRIMÁRNE PALIVO (VYSOKÝ OKTÁN)</span><br>
+&gt; Glukóza = preferovaný zdroj energie pre mozog aj svaly. Bez nej výkon klesá.<br>
+&gt; Prioritizuj komplexné: ovsené vločky, ryža, zemiaky — pomalé spaľovanie = stabilný výkon.<br>
+&gt; Rýchle cukry pri dlhej práci = spike &amp; crash. Vyhýbaj sa im.<br><br>
+<span style="color:var(--neon);">&gt; [KOMPONENT_03]</span> <span style="color:var(--amber);">TUKY — SYSTÉMOVÉ MAZIVO &amp; IZOLÁCIA</span><br>
+&gt; Udržujú hormonálny systém, nervovú sústavu a bunkové membrány.<br>
+&gt; Zdroje: olivový olej, avokádo, orechy, tučné ryby.<br>
+<span style="color:var(--red);">&gt; [CHYBA:]</span> Eliminácia tukov = systémový zlyhanie. Omega-3 nie sú voliteľné. ✓`
+    },
+    kernel: {
+      label: '// SHARD_03 — KERNEL OPTIMIZATION REPORT',
+      labelColor: 'var(--red)',
+      title: '🧠 DEBUGGING: FOKUS &amp; VÝKON',
+      titleColor: 'var(--red)',
+      body: `<span style="color:var(--red);">&gt; [BUG REPORT #0042]</span> Vysoká latencia procesora (mozgu) počas skúškového.<br>
+&gt; <span style="color:var(--amber);">Príčina:</span> Cukrový spike → inzulínový odpad → glukózový crash → CPU throttling.<br>
+&gt; Symptómy: Neschopnosť koncentrácie, podráždenosť, mikrospánky.<br><br>
+<span style="color:var(--neon);">&gt; [PATCH_01 — STABILNÁ GLYKÉMIA]</span><br>
+&gt; Jedz každé 3–4 hodiny. Kombinácia bielkovín + komplexných sacharidov = steady-state glukózy.<br>
+&gt; Výsledok: Žiadne výkyvy výkonu. Fokus bez prerušenia. ✓<br><br>
+<span style="color:var(--neon);">&gt; [PATCH_02 — SPÁNOK = CACHE CLEAR]</span><br>
+&gt; Mozog počas spánku vymaže odpad, konsoliduje pamäť a resetuje neurotransmitery.<br>
+&gt; <span style="color:var(--amber);">7–9 hodín = povinný reštart systému.</span> Pod 6h = degradovaný výkon.<br><br>
+<span style="color:var(--red);">&gt; [KRITICKÁ CHYBA — KOFEÍN]</span><br>
+&gt; Energetické nápoje maskujú únavu, ale neriešia ju. Odkladáš dlh — systém zaplatí neskôr.<br>
+<span style="color:var(--neon);">&gt; [ZÁVER:]</span> Optimálny kernel = správne palivo + dostatok RAM clearance (spánok). Žiadna skratka. ✓`
+    }
+  };
+
+  function openArticle(type) {
+    const data = articleData[type];
+    if (!data) return;
+    document.getElementById('modal-label').textContent = data.label;
+    document.getElementById('modal-label').style.color = data.labelColor;
+    document.getElementById('modal-title').textContent = data.title;
+    document.getElementById('modal-title').style.color = data.titleColor;
+    document.getElementById('modal-body').innerHTML = data.body;
+    document.getElementById('response-modal').classList.add('active');
+  }
+
+  // Shard hover glow effect
+  document.querySelectorAll('#section-library .panel').forEach(card => {
+    card.addEventListener('mouseenter', () => { card.style.transform = 'translateY(-4px)'; });
+    card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0)'; });
+  });
 
   const reveals = document.querySelectorAll('.reveal');
   const sectionFuel = document.getElementById('section-fuel');
