@@ -262,11 +262,14 @@
     position: fixed;
     inset: 0;
     background: rgba(5,13,26,0.95);
-    z-index: 1000;
+    z-index: 500;
     align-items: center;
     justify-content: center;
+    padding: 16px;
+    -webkit-overflow-scrolling: touch;
   }
   #response-modal.active { display: flex; }
+  body.modal-open { overflow: hidden; position: fixed; width: 100%; }
 
   /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; }
@@ -403,7 +406,7 @@
 <body class="grid-bg min-h-screen">
 
 <!-- TOP NAV BAR -->
-<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2" style="background:rgba(5,13,26,0.9); border-bottom:1px solid var(--blue-border); backdrop-filter:blur(10px);">
+<nav class="flex items-center justify-between px-4 py-2" style="position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(5,13,26,0.9); border-bottom:1px solid var(--blue-border); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transform:translateZ(0); -webkit-transform:translateZ(0);">
   <div class="flex items-center gap-3">
     <div class="w-2 h-2 rounded-full pulse-neon" style="background:var(--neon);"></div>
     <span class="font-mono text-xs" style="color:var(--neon);">SYS.ACTIVE</span>
@@ -505,11 +508,15 @@
 </section>
 
 <!-- RESPONSE MODAL -->
-<div id="response-modal">
-  <div class="panel corner-tl corner-br p-8 max-w-md mx-4 text-center" id="modal-content">
+<div id="response-modal" onclick="closeModal()">
+  <div class="panel corner-tl corner-br p-6 text-center" id="modal-content"
+       onclick="event.stopPropagation()"
+       style="max-width:480px; width:calc(100% - 32px); max-height:85vh; overflow-y:auto; -webkit-overflow-scrolling:touch; margin:auto;">
+    <!-- X close button (mobile-friendly) -->
+    <button onclick="closeModal()" style="position:absolute; top:12px; right:12px; background:transparent; border:1px solid var(--text-dim); color:var(--text-dim); font-family:'Share Tech Mono',monospace; font-size:0.75rem; padding:4px 8px; cursor:pointer; border-radius:2px; line-height:1;" aria-label="Zavrieť">✕</button>
     <div class="font-mono text-xs mb-4" style="color:var(--neon);" id="modal-label">// SYSTÉMOVÁ ODOZVA</div>
     <div class="font-orb text-xl mb-4" id="modal-title" style="color:#fff;"></div>
-    <p class="font-mono text-sm mb-6" id="modal-body" style="color:var(--text-dim); line-height:1.8;"></p>
+    <p class="font-mono text-sm mb-6 text-left" id="modal-body" style="color:var(--text-dim); line-height:1.8;"></p>
     <button class="btn-yes" onclick="closeModal()">[ POKRAČOVAŤ ]</button>
   </div>
 </div>
@@ -1492,6 +1499,15 @@
   }
 
   // ── MODAL HANDLING ──
+  function openModal() {
+    document.getElementById('response-modal').classList.add('active');
+    document.body.classList.add('modal-open');
+  }
+  function closeModal() {
+    document.getElementById('response-modal').classList.remove('active');
+    document.body.classList.remove('modal-open');
+  }
+
   function handleYes() {
     document.getElementById('modal-label').textContent = '// SYSTÉMOVÁ ODOZVA — UPGRADE SPUSTENÝ';
     document.getElementById('modal-label').style.color = 'var(--neon)';
@@ -1502,7 +1518,7 @@
        &gt; Odporúčanie: Skontroluj dnešné palivo<br>
        &gt; Ďalší krok: Použi Dine4Fit<br>
        &gt; Status: HARDWARE UPDATE v1.0 — IN PROGRESS`;
-    document.getElementById('response-modal').classList.add('active');
+    openModal();
   }
 
   function handleNo() {
@@ -1515,11 +1531,7 @@
        &gt; Batéria na 12% — odporúčame rekonfiguráciu.<br>
        &gt; Nudge note: Možno si ešte zmeníš názor.<br>
        &gt; Bol si tu. Čítaš. To je začiatok. ✓`;
-    document.getElementById('response-modal').classList.add('active');
-  }
-
-  function closeModal() {
-    document.getElementById('response-modal').classList.remove('active');
+    openModal();
   }
 
   // ── SCROLL REVEAL + SCROLL-TRIGGERED BATTERY ──
@@ -1606,10 +1618,8 @@
     document.getElementById('modal-title').textContent = data.title;
     document.getElementById('modal-title').style.color = data.titleColor;
     document.getElementById('modal-body').innerHTML = data.body;
-    document.getElementById('response-modal').classList.add('active');
+    openModal();
   }
-
-  // Shard hover glow effect
   document.querySelectorAll('#section-library .panel').forEach(card => {
     card.addEventListener('mouseenter', () => { card.style.transform = 'translateY(-4px)'; });
     card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0)'; });
